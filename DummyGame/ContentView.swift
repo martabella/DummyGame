@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State private var alertVisible = false
     @State private var sliderValue = 20.0
+    
+    @State private var game = Game()
     
     var body: some View {
         ZStack{
@@ -18,7 +21,7 @@ struct ContentView: View {
             Text("🎯🎯🎯")
                 .font(.largeTitle)
             
-            Text("89")
+                Text("\(game.target)")
                 .font(.largeTitle)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .kerning(-1)
@@ -28,6 +31,7 @@ struct ContentView: View {
             Text("\(sliderValue)")
             
             Button("TRY"){
+                game.calculatePoint(sliderValue: sliderValue)
                 self.alertVisible = true
             }
             .font(.title3)
