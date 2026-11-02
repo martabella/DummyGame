@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack{
+        ZStack{
+            Color("BackgroundColor").ignoresSafeArea()
+            VStack{
             Text("🎯🎯🎯")
                 .font(.largeTitle)
             
@@ -31,10 +33,12 @@ struct ContentView: View {
             .font(.title3)
             .foregroundColor(Color.white)
             .padding()
-            .background(Color.blue)
+            .background(Color.accentColor)
             .cornerRadius(21)
             
-        }.padding()
+        }
+        .padding()
+        }
         
             
     }
