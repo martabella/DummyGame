@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var alertVisible = false
-    @State private var sliderValue = 20.0
+    @State private var sliderValue = 50.0
     
     @State private var game = Game()
     
@@ -26,7 +26,7 @@ struct ContentView: View {
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .kerning(-1)
                 
-            SliderView(value: $sliderValue)
+                SliderView(value: $sliderValue, min: Game.minValue, max: Game.maxValue)
                 
             Text("\(sliderValue)")
             
@@ -44,9 +44,13 @@ struct ContentView: View {
         .padding()
         }.alert(isPresented: $alertVisible){
             Alert(
-                title: Text("Hello"),
-                message: Text("This is my first alert"),
-                dismissButton: .default(Text("Got it")){print("Alert is close")}
+                title: Text("Congratulations "),
+                message: Text("Your win \(game.points) points"),
+                dismissButton: .default(Text("Got it")){
+                    game.startNewGame()
+                    self.sliderValue = Double(Game.maxValue-Game.minValue)/2.0
+                    
+                }
             )
         }
             
@@ -55,14 +59,17 @@ struct ContentView: View {
 
 
 struct SliderView: View{
+    
     @Binding var value:Double
+    let min : Int
+    let max: Int
     
     var body: some View{
         HStack {
-            Text("1")
+            Text("\(min)")
                 .fontWeight(.bold)
-            Slider(value: $value, in: 1...100)
-            Text("100")
+            Slider(value: $value, in: Double(min)...Double(max))
+            Text("\(max)")
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
         }
     }
