@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var alertVisible = false
     var body: some View {
         ZStack{
             Color("BackgroundColor").ignoresSafeArea()
@@ -28,7 +29,7 @@ struct ContentView: View {
             }
             
             Button("TRY"){
-                print("tapped")
+                self.alertVisible = true
             }
             .font(.title3)
             .foregroundColor(Color.white)
@@ -38,8 +39,13 @@ struct ContentView: View {
             
         }
         .padding()
+        }.alert(isPresented: $alertVisible){
+            Alert(
+                title: Text("Hello"),
+                message: Text("This is my first alert"),
+                dismissButton: .default(Text("Got it")){print("Alert is close")}
+            )
         }
-        
             
     }
 }
