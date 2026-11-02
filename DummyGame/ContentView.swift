@@ -22,13 +22,9 @@ struct ContentView: View {
                 .font(.largeTitle)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .kerning(-1)
-            HStack {
-                Text("1")
-                    .fontWeight(.bold)
-                Slider(value: $sliderValue, in: 1...100)
-                Text("100")
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-            }
+                
+            SliderView(value: $sliderValue)
+                
             Text("\(sliderValue)")
             
             Button("TRY"){
@@ -53,6 +49,20 @@ struct ContentView: View {
     }
 }
 
+
+struct SliderView: View{
+    @Binding var value:Double
+    
+    var body: some View{
+        HStack {
+            Text("1")
+                .fontWeight(.bold)
+            Slider(value: $value, in: 1...100)
+            Text("100")
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+        }
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
