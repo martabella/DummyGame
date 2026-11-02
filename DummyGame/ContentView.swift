@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var alertVisible = false
+    @State private var alertVisible = false
+    @State private var sliderValue = 20.0
+    
     var body: some View {
         ZStack{
             Color("BackgroundColor").ignoresSafeArea()
@@ -23,10 +25,11 @@ struct ContentView: View {
             HStack {
                 Text("1")
                     .fontWeight(.bold)
-                Slider(value: .constant(20), in: 1...100)
+                Slider(value: $sliderValue, in: 1...100)
                 Text("100")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             }
+            Text("\(sliderValue)")
             
             Button("TRY"){
                 self.alertVisible = true
