@@ -10,13 +10,14 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var alertVisible = false
-    @State private var sliderValue = 50.0
+    @State private var sliderValue = Double(Game.maxValue-Game.minValue)/2
     
     @State private var game = Game()
     
     var body: some View {
         ZStack{
-            Color("BackgroundColor").ignoresSafeArea()
+            BackgroundView().ignoresSafeArea()
+           
             VStack{
             Text("🎯🎯🎯")
                 .font(.largeTitle)
