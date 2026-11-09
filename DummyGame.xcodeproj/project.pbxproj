@@ -15,6 +15,7 @@
 		EFA85EC130A2194A0096020A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA85EC030A2194A0096020A /* BackgroundView.swift */; };
 		EFA85EC630A21C090096020A /* SymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA85EC530A21C090096020A /* SymbolView.swift */; };
 		EFA85ECC30A21F340096020A /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA85ECB30A21F340096020A /* NumberView.swift */; };
+		EFA85ED130A225AA0096020A /* MarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA85ED030A225AA0096020A /* MarksView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EFA85EC030A2194A0096020A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		EFA85EC530A21C090096020A /* SymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolView.swift; sourceTree = "<group>"; };
 		EFA85ECB30A21F340096020A /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		EFA85ED030A225AA0096020A /* MarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				EFA85EC530A21C090096020A /* SymbolView.swift */,
 				EFA85EC030A2194A0096020A /* BackgroundView.swift */,
 				EFA85ECB30A21F340096020A /* NumberView.swift */,
+				EFA85ED030A225AA0096020A /* MarksView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			files = (
 				EFA85EC130A2194A0096020A /* BackgroundView.swift in Sources */,
 				EFA85EC630A21C090096020A /* SymbolView.swift in Sources */,
+				EFA85ED130A225AA0096020A /* MarksView.swift in Sources */,
 				EF8A73C3308FA9710038CD95 /* ContentView.swift in Sources */,
 				EF53807E3098E60900589FC5 /* Game.swift in Sources */,
 				EF8A73C1308FA9710038CD95 /* DummyGameApp.swift in Sources */,

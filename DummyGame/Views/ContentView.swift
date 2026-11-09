@@ -16,7 +16,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack{
-            BackgroundView().ignoresSafeArea()
+            BackgroundView(game: $game).ignoresSafeArea()
            
             VStack{
             Text("🎯🎯🎯")
@@ -48,7 +48,7 @@ struct ContentView: View {
                 title: Text("Congratulations "),
                 message: Text("Your win \(game.points) points"),
                 dismissButton: .default(Text("Got it")){
-                    game.startNewGame()
+                    game.startNewRound()
                     self.sliderValue = Double(Game.maxValue-Game.minValue)/2.0
                     
                 }
